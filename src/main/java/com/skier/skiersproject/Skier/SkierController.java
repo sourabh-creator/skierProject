@@ -26,7 +26,7 @@ public class SkierController {
     }
 
     @ApiOperation(value = "Get a skier by id")
-    @GetMapping("/findById")
+    @GetMapping("/findById", produces = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<String> getSkierById(@ApiParam(value = "Skier ID", required = true) @PathVariable int id) {
         return this.skierService.getSkierById(id);
     }
