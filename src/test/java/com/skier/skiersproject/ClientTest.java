@@ -28,9 +28,9 @@ public class ClientTest {
 
     @Test
     public final void doGetLatencies() throws IOException {
-        long[] latencies = new long[10];
-        long[] test = new long[10];
-        for (int i = 0; i < 10; i++) {
+        long[] latencies = new long[100];
+        long[] test = new long[100];
+        for (int i = 0; i < 100; i++) {
             CloseableHttpClient httpclient = HttpClients.createDefault();
             HttpGet httpGet = new HttpGet("http://localhost:8080/skier/findAll");
 
@@ -46,8 +46,13 @@ public class ClientTest {
                 e.printStackTrace();
             }
         }
-        assertEquals(10, latencies.length);
+        assertEquals(100, latencies.length);
         assertNotEquals(test, latencies);
+        System.out.println("Latencies: ");// for loop to print out the array
+        for (int i = 0; i < latencies.length; i++)
+        {
+            System.out.printf("No: %d = %d ms\n", i + 1, latencies[i]);
+        }
     }
 
     @Test
@@ -56,8 +61,8 @@ public class ClientTest {
             List<Skier> skierList = new ArrayList<>();
             List<String> jsonList = new ArrayList<>();
             ObjectMapper objectMapper = new ObjectMapper();
-            long[] latencies = new long[10];
-            long[] test = new long[10];
+            long[] latencies = new long[100];
+            long[] test = new long[100];
 
             skierList.add(new Skier(1, 1, 1, 1, 1, 1));
             skierList.add(new Skier(2, 2, 2, 1, 1, 1));
@@ -69,8 +74,99 @@ public class ClientTest {
             skierList.add(new Skier(8, 8, 8, 1, 1, 1));
             skierList.add(new Skier(9, 9, 9, 1, 1, 1));
             skierList.add(new Skier(10, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(11, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(12, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(13, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(14, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(15, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(16, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(17, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(18, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(19, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(20, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(21, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(22, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(23, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(24, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(25, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(26, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(27, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(28, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(29, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(30, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(31, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(32, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(33, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(34, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(35, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(36, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(37, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(38, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(39, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(40, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(41, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(42, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(43, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(44, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(45, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(46, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(47, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(48, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(49, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(50, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(51, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(52, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(53, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(54, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(55, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(56, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(57, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(58, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(59, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(60, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(61, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(62, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(63, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(64, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(65, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(66, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(67, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(68, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(69, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(70, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(71, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(72, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(73, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(74, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(75, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(76, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(77, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(78, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(79, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(80, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(81, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(82, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(83, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(84, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(85, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(86, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(87, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(88, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(89, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(90, 10, 10, 1, 1, 1));
+            skierList.add(new Skier(91, 1, 1, 1, 1, 1));
+            skierList.add(new Skier(92, 2, 2, 1, 1, 1));
+            skierList.add(new Skier(93, 3, 3, 1, 1, 1));
+            skierList.add(new Skier(94, 4, 4, 1, 1, 1));
+            skierList.add(new Skier(95, 5, 5, 1, 1, 1));
+            skierList.add(new Skier(96, 6, 6, 1, 1, 1));
+            skierList.add(new Skier(97, 7, 7, 1, 1, 1));
+            skierList.add(new Skier(98, 8, 8, 1, 1, 1));
+            skierList.add(new Skier(99, 9, 9, 1, 1, 1));
+            skierList.add(new Skier(100, 10, 10, 1, 1, 1));
 
-            for (int i = 0; i < 10; i = i + 1) {
+
+            for (int i = 0; i < 100; i = i + 1) {
                 long startTime = System.currentTimeMillis();
                 String json = objectMapper.writeValueAsString(skierList.get(i));
                 jsonList.add(json);
@@ -105,12 +201,18 @@ public class ClientTest {
                 response.close();
                 httpClient.close();
             }
-            assertEquals(10, latencies.length);
+            assertEquals(100, latencies.length);
             assertNotEquals(test, latencies);
+            System.out.println("Latencies: ");
+            // for loop to print out the array
+            for (int i = 0; i < latencies.length; i++) {
+                System.out.printf("No: %d = %d ms\n", i + 1, latencies[i]);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
 
 }
